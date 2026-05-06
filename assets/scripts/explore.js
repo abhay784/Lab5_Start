@@ -13,16 +13,19 @@ function init() {
 
   function populateVoices() {
     const voices = synth.getVoices();
-    const rand = voiceSelect.querySelector('[value="select"]');
-    if (rand) {
-      rand.remove();
+
+    const placeholderOption = voiceSelect.querySelector('[value="select"]');
+    if (placeholderOption) {
+      placeholderOption.remove();
     }
+
     voiceSelect.innerHTML = '';
+
     voices.forEach((voice, index) => {
-      const choice = document.createElement('option');
-      choice.textContent = `${voice.name} (${voice.lang})`;
-      choice.value = index;
-      voiceSelect.appendChild(choice);
+      const option = document.createElement('option');
+      option.textContent = `${voice.name} (${voice.lang})`;
+      option.value = index;
+      voiceSelect.appendChild(option);
     });
   }
   populateVoices();
