@@ -13,13 +13,9 @@ function init() {
 
   function populateVoices() {
     const voices = synth.getVoices();
-
-    const placeholderOption = voiceSelect.querySelector('[value="select"]');
-    if (placeholderOption) {
-      placeholderOption.remove();
-    }
-
-    voiceSelect.innerHTML = '';
+    if (voices.length === 0) return;
+    const options = voiceSelect.querySelectorAll('option:not([value="select"])');
+    options.forEach(opt => opt.remove());
 
     voices.forEach((voice, index) => {
       const option = document.createElement('option');
@@ -28,8 +24,10 @@ function init() {
       voiceSelect.appendChild(option);
     });
   }
-  populateVoices();
+
   synth.addEventListener('voiceschanged', populateVoices);
+
+  populateVoices();
 
   playButton.addEventListener('click', function () {
     synth.cancel();
