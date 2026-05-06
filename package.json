@@ -1,0 +1,33 @@
+{
+  "name": "lab5_start",
+  "version": "1.0.0",
+  "description": "Make sure you make a PR to your own repo's main and not the class' repo!! Otherwise you will lose points!!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhay784/Lab5_Start.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/abhay784/Lab5_Start/issues"
+  },
+  "homepage": "https://github.com/abhay784/Lab5_Start#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "type": "module",
+  "jest": {
+    "transform": {},
+    "verbose": true
+  }
+}
+
